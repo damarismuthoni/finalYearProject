@@ -9,5 +9,18 @@ class Abstracts extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     protected $table  = 'abstracts';
+
+    protected $fillable = [
+        'police_station_id',
+        'police_id',
+        'citizen_id',
+        'abstract_refernce_no',
+        'details',
+        'category_id',
+        'date of incident'
+    ];
 }
+

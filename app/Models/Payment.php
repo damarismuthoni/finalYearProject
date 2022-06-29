@@ -8,5 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Payment extends Model
 {
     use HasFactory;
+
+    public $timestamps = false;
+
     protected $table  = 'payment';
+
+    protected $fillable = [
+        'arrest_id',
+        'amount_paid',
+        'receipt_number'
+    ];
 }
+

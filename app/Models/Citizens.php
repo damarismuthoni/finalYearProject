@@ -9,5 +9,14 @@ class Citizens extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     protected $table  = 'citizens';
+
+    protected $fillable = [
+        'citizen_name',
+        'id_numner',
+        'phone_number',
+        'email_address'
+    ];
 }

@@ -55,3 +55,6 @@ Route::post('/police-station' , [PoliceStationController::class, 'policestation'
 
 Route::post('/abstracts' , [AbstractsController::class, 'abstracts']);
 
+Route::post('/categories' , [CategoriesController::class, 'categories']);
+
+Route::post('/login' ,[PoliceUserController::class, 'login']);

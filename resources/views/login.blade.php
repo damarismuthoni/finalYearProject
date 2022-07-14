@@ -19,7 +19,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #080D38 ;
+            background: #B83818 ;
         }
         .login{
             width: 360px;
@@ -41,6 +41,8 @@
         .login form input[type="submit"]{
             font-size: 20px;
             margin-top: 15px;
+            background: #080D38;
+            border-radius: 21px;
         }
     </style>
 
@@ -51,11 +53,22 @@
 
     <div class="login">
              <h1 class="text-center"> Login </h1>
-        <form class="needs-validation">
+
+             @if ($errors->any())
+                <div class="alert alert-danger">
+                    <b>{{ $message }}</b>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+        <form class="needs-validation" method="POST" action="/api/login">
             <div class="form-group was validated"></div>
 
             <label class="form-label" for="reg_no">Registration Number</label>
-            <input class="form-control" type="reg_no" id="reg_no" required>
+            <input class="form-control" name="reg_no" type="name" id="reg_no" value="ofc/3843/4991" required>
 
             <div class="invalid-feedback">
                     please enter your Registration Number
@@ -64,7 +77,7 @@
             <div class="form-group"></div>
 
                 <label class="form-label" for="password">Password</label>
-                <input  class="form-control" type="password" id="password" required>
+                <input  class="form-control" name="password" type="password" id="password" value="jacob123" required>
 
             <div class="invalid-feedback">
                     please enter your password

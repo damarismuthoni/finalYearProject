@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\PoliceUser;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\MessageBag;
 
 class PoliceUserController extends Controller
 {
@@ -105,16 +106,35 @@ class PoliceUserController extends Controller
         ]);
 
         if ($validatedData->fails()) {
-            return response()->json([
-                'message' => 'Érror during validation',
-                'data' => $validatedData->errors()
-            ], 400);
+            $errors =  $validatedData->errors();
+            $message = "Ërror During Login";
+
+            // If the Laravel Validation fails:
+            //      - Go back to the log in page, but pass the $errors and $message variable above
+            return view('login', compact('errors', 'message'));
+            
+        }
+        
+
+        // If the Laravel Validation Is Successful, but the password is incorrect:
+        if (!$token = auth()->attempt($validatedData->validated())) {
+            $message = "Ërror During Login";
+            $errors = new MessageBag([
+                'password' => 'Invalid Password Entered'
+            ]);
+
+
+             //      - Go back to the log in page, but pass the $errors and $message variable above
+            return view('login', compact('errors', 'message'));
         }
 
-        if (!$token = auth()->attempt($validatedData->validated())) {
-            return response()->json(['error' => 'Invalid login credentials entered'], 401);
-        }
-        return $this->createNewToken($token);
+        
+
+        $successResponse =  $this->createNewToken($token);
+        // TODO: We will store the logged in user in a Session variable,
+        //          So that we can access the logged in user across the application
+        return redirect('/homepage');
+
 
     }
 
@@ -131,12 +151,12 @@ class PoliceUserController extends Controller
      */
     protected function createNewToken($token)
     {
-        return response()->json([
+        return [
             'access_token' => $token,
             'token_type' => 'bearer',
             // 'expires_in' => auth()->factory()->getTTL() * 60,
             'user' => auth()->user()
-        ]);
+        ];
     }
 
 }

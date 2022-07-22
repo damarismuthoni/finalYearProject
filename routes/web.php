@@ -48,7 +48,7 @@ Route::get('/arrests', function () {
 });
 
 
-Route::get('/porfolio', function () {
-    return view('portfolio');
+Route::get('/police-station', function () {
+    return view('police-station');
 });
 

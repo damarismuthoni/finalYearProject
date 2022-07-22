@@ -117,11 +117,10 @@
     <div class="sidebar">
         <ul>
             <li><a href="homepage"></i>Home</a></li>
-            <li><a href="profiles"></i>Profiles</a></li>
             <li><a href="abstracts"></i>Abstracts</a></li>
             <li><a href="payments"></i>Payments</a></li>
             <li><a href="arrests"></i>Arrests</a></li>
-            <li><a href="portfolio"></i>Portfolio</a></li>
+            <li><a href="police-station"></i>Portfolio</a></li>
             
         </ul> 
       

@@ -19,7 +19,7 @@
         text-decoration: none;
         font-family: 'Josefin Sans', sans-serif;
         }
-
+        h1{  text-align: center; }
         body{
         background-color: #B83818;
         }
@@ -117,24 +117,51 @@
     <div class="sidebar">
         <ul>
             <li><a href="homepage"></i>Home</a></li>
-            <li><a href="profiles"></i>Profiles</a></li>
             <li><a href="abstracts"></i>Abstracts</a></li>
             <li><a href="payments"></i>Payments</a></li>
             <li><a href="arrests"></i>Arrests</a></li>
-            <li><a href="portfolio"></i>Portfolio</a></li>
+            <li><a href="police-station"></i>Portfolio</a></li>
             
         </ul> 
       
     </div>
     <div class="main_content">
-        <div class="header">Welcome!! Have a nice day.</div>  
+        <div class="header"> <h1>THE KENYA NATIONAL POLICE.</h1> </div>  
         <div class="info">
-          <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
-          <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
-          <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
+          <div></div>
+          <div style="text-align:center">
+            <p> <b> Our Vison:</b> <br><br>
+            To be a world class police service, with a people-friendly, responsive and professional workforce.<br> <br>
+             <b>   Our Mission </b><br><br>
+            We are committed to providing T quality police service to meet the expectations of our customers; by upholding the rule of law,<br>
+            creating and maintaining strong partnerships for a conducive social, economic and political development of Kenya. </p>
+            <b>Our Core Values:</b><br><br>
+            Be proactive and responsive in the discharge of our duties:<br>  
+            To exercise integrity and courtesy at all time;<br>
+            To cultivate and maintain partnership with all stakeholders;<br>
+            To create and maintain team spirit within the service;<br>
+            To be fair and firm in all our undertakings;<br>
+            To maintain a disciplined and professional workforce;<br>
+            To be gender sensitive;<br>
+            To promote, protect and respect the human rights of our customers.<br><br>
+              <b>  Core Functions</b> <br> <br>
+
+                Maintenance of law and order;<br>
+                Preservation of peace;<br>
+                Protection of life and property;<br>
+                Prevention and detection of crime;<br>
+                Apprehension of offenders; and<br>
+                Enforcement of all laws and regulations with which it has been charged.<br>
+        </div>
+          <div> </div>
       </div>
     </div>
 </div>
 
 </body>
+
+<footer>
+    
+    
+</footer>
 </html>

@@ -37,7 +37,7 @@ class PoliceUserController extends Controller
         $validatedData = Validator::make($request->all(), [
             'police_name' => ['required'],
             'reg_no' => ['required', 'unique:police_users'],
-            'police_station_id' => ['required','exists:police_station'],
+            'police_station_id' => ['required'],
             'phone_no' => ['required', 'unique:police_users'],
             'password' => ['required']
         ]);
@@ -67,7 +67,13 @@ class PoliceUserController extends Controller
 
 
 
-        // Generate an authenticaton token which will log in the user
+        // Generate an authenticaton token which will log in the user....at the same time generating an authentication token
+        $token = auth()->attempt([
+            'reg_no' => $request->reg_no,
+            'password' => $request->password
+        ]);
+
+        //Generate an authentication token which will create a new user
         $token = auth()->attempt([
             'reg_no' => $request->reg_no,
             'password' => $request->password
@@ -81,7 +87,7 @@ class PoliceUserController extends Controller
         // Return the logged in user's token 
         return $this->createNewToken($token);
         
-
+        
 
 
         // $newPoliceUser = new PoliceUser();
@@ -94,6 +100,7 @@ class PoliceUserController extends Controller
         // $newPoliceUser->save();
 
         return $newPoliceUser;
+  
     }
 
 
@@ -139,7 +146,7 @@ class PoliceUserController extends Controller
     }
 
 
-
+     
 
 
     /**

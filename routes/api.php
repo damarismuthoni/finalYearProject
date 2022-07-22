@@ -51,7 +51,7 @@ Route::post('/citizens' , [CitizensController::class, 'citizens']);
 
 Route::post('/payment' , [PaymentController::class, 'payment']);
 
-Route::post('/police-station' , [PoliceStationController::class, 'policestation']);
+Route::post('/police-station' , [PoliceStationController::class, 'PoliceStation']);
 
 Route::post('/abstracts' , [AbstractsController::class, 'abstracts']);
 

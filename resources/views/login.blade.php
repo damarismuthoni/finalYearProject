@@ -83,9 +83,12 @@
                     please enter your password
             </div>
 
-            <div class="form-group"></div> {{-- <input class="btn btn success w-100" type="submit" value="LOGIN"> --}}
-        
                 <input type="submit" class="btn form-control btn-success btn-block" name="" value="Submit">
+            <div>
+
+                <p> Don't have an Account Yet? <a href="/register">
+                    Click here to Register</a> </p>
+            </div>
         </form>
 
     </div>

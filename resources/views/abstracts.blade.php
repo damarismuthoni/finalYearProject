@@ -157,7 +157,7 @@ p {
 .input-field {
   display: inline-block;
   width: 100%;
-  padding: 5px;
+  padding: 7px;
   margin: 18px 0 0 10px;
   border: 1px solid #e67e22;
   border-radius: 4px;
@@ -261,30 +261,30 @@ button {
 </div>
 
 <div class="container">
-  <form id="abstract-form" method="POST">
+  <form id="abstract_form" method="POST">
     <p> <b> Complainant's Section: </b></p>
   <div class="labels">
-    <label id="name-label" for="police-station">* Police Station</label></div>
+    <label id="name-label" for="police_station">Police Station*</label></div>
     <div class="input-tab">
-    <input class="input-field" type="text" id="police-station" name="police-station" placeholder="Enter the police statiion where report will be filed" required autofocus></div>
+    <input class="input-field" type="text" id="police_station" name="police_station" placeholder="Enter the police statiion where report will be filed" required autofocus></div>
 
   <div class="labels">
-    <label id="email-label" for="name">* Name of Complainant</label></div>
+    <label id="email-label" for="name">Name of Complainant*</label></div>
     <div class="input-tab">
     <input class="input-field" type="text" id="name" name="name" placeholder="Enter your Full Names  as per National ID" required></div>
       
     <div class="labels">
-      <label id="name-label" for="idnumber">* ID Number</label></div>
+      <label id="name-label" for="idnumber">ID Number*</label></div>
       <div class="input-tab">
-      <input class="input-field" type="text" id="citizen-id" name="citizen-id" placeholder="Complainant National Id No/Passport No" required autofocus></div>
+      <input class="input-field" type="text" id="citizen_id" name="citizen_id" placeholder="Complainant National Id No/Passport No" required autofocus></div>
     
   <div class="labels">
-    <label id="name-label" for="telephonenumber">* Telephone Number</label></div>
+    <label id="name-label" for="telephonenumber">Telephone Number*</label></div>
     <div class="input-tab">
-    <input class="input-field" type="text" id="telephonenumber" name="telephonenumber" placeholder="Enter your Telephone No" required autofocus></div>
+    <input class="input-field" type="text" id="telephone_number" name="telephone_number" placeholder="Enter your Telephone No" required autofocus></div>
     
   <div class="labels">
-    <label id="name-label" for="details">* Incident Details</label></div>
+    <label id="name-label" for="details"> Incident Details*</label></div>
     <div class="input-tab">
     <input class="input-field" type="text" id="datails"  name="details" placeholder="Details of the incident" required autofocus></div>
    
@@ -294,12 +294,12 @@ button {
     <input class="input-field" type="text" id="witness" name="witness" placeholder="Witness account of incident if present" required autofocus></div>
     
   <div class="labels">
-   <label id="name-label" for="costs">* Estimated Amount for loss incurred</label></div>
+   <label id="name-label" for="costs"> Estimated Amount for loss incurred</label></div>
    <div class="input-tab">
    <input class="input-field" type="text" id="costs" name="costs" placeholder="Estimated value of any losses incurred during incident being reported " required autofocus></div>
      
   <div class="labels">
-    <label id="name-label" for="date">* Date</label></div>
+    <label id="name-label" for="date"> Date*</label></div>
     <div class="input-tab">
     <input class="input-field" type="date" id="date" name="date" placeholder="Date which the incident occured" required autofocus></div> <br>
       
@@ -309,39 +309,39 @@ button {
   <p> <b> To be filled by an Officer: </b></p>
 
 <div class="labels">
-  <label id="name-label" for="received-by">* Received By</label></div>
+  <label id="name-label" for="received_by"> Received By*</label></div>
   <div class="input-tab">
-  <input class="input-field" type="text" id="received-by" name="received-by" placeholder="Name of Officer who will handle the complaint" required autofocus></div>
+  <input class="input-field" type="text" id="received_by" name="received_by" placeholder="Name of Officer who will handle the complaint" required autofocus></div>
 
 <div class="labels">
-  <label id="name-label" for="police-id">* Police Id</label></div>
+  <label id="name-label" for="police_id"> Police Id*</label></div>
   <div class="input-tab">
-  <input class="input-field" type="text" id="police-id" name="police-id" placeholder="Id number of police handling the report" required autofocus></div>
+  <input class="input-field" type="text" id="police_id" name="police_id" placeholder="Id number of police handling the report" required autofocus></div>
     
 <div class="labels">
-  <label id="email-label" for="abstact_serial_no">* Abstract Serial Number</label></div>
+  <label id="email-label" for="abstact_serial_no"> Abstract Serial Number*</label></div>
   <div class="input-tab">
   <input class="input-field" type="text" id="abstact_serial_no" name="abstact_serial_no" placeholder="Enter the Abstract Serial Number" required></div>
     
 <div class="labels">
-  <label id="name-label" for="police-station-id">* Police Station Id</label></div>
+  <label id="name-label" for="police_station_id"> Police Station Id*</label></div>
   <div class="input-tab">
-  <input class="input-field" type="text" id="police-station-id" name="police-station-id" placeholder=" Enter the police station id where the report was received" required autofocus></div>
+  <input class="input-field" type="text" id="police_station_id" name="police_station_id" placeholder=" Enter the police station id where the report was received" required autofocus></div>
   
 <div class="labels">
-  <label id="name-label" for="presiding-officer">* Officer In Charge</label></div>
+  <label id="name-label" for="presiding_officer"> Officer In Charge*</label></div>
   <div class="input-tab">
-  <input class="input-field" type="text" id="presiding-officer"  name="presiding-officer" placeholder="Name of Presiding Officer at the Police Station" required autofocus></div>
+  <input class="input-field" type="text" id="presiding_officer"  name="presiding_officer" placeholder="Name of Presiding Officer at the Police Station" required autofocus></div>
  
 <div class="labels">
-  <label id="name-label" for="police-notes">Police Notes</label></div>
+  <label id="name-label" for="police_notes">Police Notes*</label></div>
   <div class="input-tab">
-  <input class="input-field" type="text" id="police-notes" name="police-notes" placeholder="Details of the police investigation concerning thw report" required autofocus></div>
+  <input class="input-field" type="text" id="police_notes" name="police_notes" placeholder="Details of the police investigation concerning thw report" required autofocus></div>
 
 <div class="labels">
-  <label for="dropdown">Status</label></div>
+  <label for="dropdown">Status*</label></div>
   <div class="input-tab">
-  <select id="dropdown" name="seasons">
+  <select id="dropdown" name="status">
   <option disabled value selected>Status of Investigation</option>
   <option value="<=5">solved</option>
   <option value="<=10">unsolved</option>

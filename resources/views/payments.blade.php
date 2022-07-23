@@ -104,6 +104,58 @@
         }
         }
 
+        .container {
+        background:#B83818;
+        border-radius: 20px;
+        margin: auto;
+        width: 100%;
+        padding: 1em;
+        }
+        #arrests-form {
+        margin: 0 auto;
+        width: 80%;
+        padding: 10px;
+        }
+        .labels {
+        display: inline-block;
+        text-align: right;
+        width: 40%;
+        vertical-align: top;
+        margin-top: 20px;
+        }
+        .input-tab {
+  display: inline-block;
+  text-align: left;
+  width: 50%;
+  margin-left: 10px;
+}
+
+.input-field {
+  display: inline-block;
+  width: 100%;
+  padding: 5px;
+  margin: 18px 0 0 10px;
+  border: 1px solid #e67e22;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+::-webkit-input-placeholder {
+   font-style: italic;
+  font-weight: 300;
+}
+
+input {
+  margin: 7px;
+}
+.input-field {
+    width: 100%;
+  }
+  .labels {
+    color: white;
+  }
     </style>
 
 
@@ -130,6 +182,40 @@
         
     </div>
 </div>
+
+<div class="container">
+    <form id="payments" method="POST">
+  
+      <div class="labels">
+         <label id="name-label" for="arrest_id">Arrest id</label></div>
+      <div class="input-tab">
+      <input class="input-field" type="text" id="arrest_id" name="arrest_id" placeholder="Enter your name of arrested individual" required autofocus>
+      </div>
+       
+      <div class="labels">
+        <label id="name-label" for="name"> Name</label></div>
+     <div class="input-tab">
+     <input class="input-field" type="text" id="name" name="name" placeholder="Enter name" required autofocus>
+     </div>
+      
+      <div class="labels">
+          <label id="name-label" for="citizens_id"> Id Number</label></div>
+       <div class="input-tab">
+       <input class="input-field" type="text" id="citizens_id" name="citizens_id" placeholder="Enter national Id number of culprit" required autofocus>
+       </div>
+       
+      <div class="labels">
+          <label id="name-label" for="amount_paid"> Amount Paid</label></div>
+      <div class="input-tab">
+      <input class="input-field" type="text" id="amount_paid" name="amount_paid" placeholder="Enter amount of cash received" required autofocus>
+      </div> 
+      
+      <div class="labels">
+        <label id="name-label" for="receipt_no"> Receipt Number</label></div>
+    <div class="input-tab">
+    <input class="input-field" type="text" id="receipt_no" name="receipt_no" placeholder="Enter receipt no" required autofocus>
+    </div>
+
 
 </body>
 </html>

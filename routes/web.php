@@ -23,32 +23,37 @@ Route::get('/register', function () {
 
 Route::get('/login', function () {
     return view('login');
+})->name('login');
+
+
+Route::group(['middleware' => []], function(){
+    Route::get('/homepage', function () {
+        return view('homepage');
+    });
+    
+    Route::get('/profiles', function () {
+        return view('profiles');
+    });
+    
+    Route::get('/abstracts', function () {
+        return view('abstracts');
+    });
+    
+    
+    Route::get('/payments', function () {
+        return view('payments');
+    });
+    
+    
+    Route::get('/arrests', function () {
+        return view('arrests');
+    });
+    
+    
+    Route::get('/police-station', function () {
+        return view('police-station');
+    });    
+
 });
 
-Route::get('/homepage', function () {
-    return view('homepage');
-});
-
-Route::get('/profiles', function () {
-    return view('profiles');
-});
-
-Route::get('/abstracts', function () {
-    return view('abstracts');
-});
-
-
-Route::get('/payments', function () {
-    return view('payments');
-});
-
-
-Route::get('/arrests', function () {
-    return view('arrests');
-});
-
-
-Route::get('/police-station', function () {
-    return view('police-station');
-});
 

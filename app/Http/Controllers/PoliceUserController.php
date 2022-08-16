@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\PoliceUser;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\MessageBag;
 
@@ -42,14 +43,17 @@ class PoliceUserController extends Controller
             'password' => ['required']
         ]);
 
+       
+
         if ($validatedData->fails()) {
-            return response()->json([
-                'message' => 'Érror during validation',
-                'data' => $validatedData->errors()
-            ], 400);
+            $errors =  $validatedData->errors();
+            $message = "Ërror During Login";
+
+            // If the Laravel Validation fails:
+            //      - Go back to the log in page, but pass the $errors and $message variable above
+            return view('register', compact('errors', 'message'));
+            
         }
-
-
         
         $newPoliceUser = PoliceUser::create([
             'police_name' => $request->police_name,   //"police_name": "Priscilla Njeri",
@@ -68,27 +72,23 @@ class PoliceUserController extends Controller
 
 
         // Generate an authenticaton token which will log in the user....at the same time generating an authentication token
-        $token = auth()->attempt([
+        $loggedIn = auth()->attempt([
             'reg_no' => $request->reg_no,
             'password' => $request->password
         ]);
 
-        //Generate an authentication token which will create a new user
-        $token = auth()->attempt([
-            'reg_no' => $request->reg_no,
-            'password' => $request->password
-        ]);
-        
         // If the token failed to generate, we should throw an error
-        if ($token == NULL) {
+        if (!$loggedIn) {
             return response()->json(['error' => 'Failed to return auth token'], 401);
         }
 
         // Return the logged in user's token 
-        return $this->createNewToken($token);
+        // return $this->createNewToken($token);
         
-        
+        session(['user' => $newPoliceUser]);
 
+       
+        return redirect('/homepage');
 
         // $newPoliceUser = new PoliceUser();
         // $newPoliceUser->police_name =  $request->police_name;
@@ -121,10 +121,14 @@ class PoliceUserController extends Controller
             return view('login', compact('errors', 'message'));
             
         }
-        
 
-        // If the Laravel Validation Is Successful, but the password is incorrect:
-        if (!$token = auth()->attempt($validatedData->validated())) {
+
+        
+        // Generate an authenticaton token which will log in the user....at the same time generating an authentication token
+        $loggedIn = auth()->attempt($validatedData->validated());
+
+        // If the token failed to generate, we should throw an error
+        if (!$loggedIn) {
             $message = "Ërror During Login";
             $errors = new MessageBag([
                 'password' => 'Invalid Password Entered'
@@ -135,15 +139,20 @@ class PoliceUserController extends Controller
             return view('login', compact('errors', 'message'));
         }
 
+        $user = auth()->user();
         
-
-        $successResponse =  $this->createNewToken($token);
         // TODO: We will store the logged in user in a Session variable,
         //          So that we can access the logged in user across the application
+
+        Session(['user' => $user]);
+        // return session('user');
+
         return redirect('/homepage');
 
 
     }
+
+
 
 
      

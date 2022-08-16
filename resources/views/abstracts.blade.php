@@ -223,7 +223,7 @@ button {
     margin-left: -10px;
   }
   .input-field {
-    width: 100%;
+    width: 80%;
   }
   select {
     width: 100%;

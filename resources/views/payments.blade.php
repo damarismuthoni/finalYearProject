@@ -132,8 +132,8 @@
 
 .input-field {
   display: inline-block;
-  width: 100%;
-  padding: 5px;
+  width: 80%;
+  padding: 8px;
   margin: 18px 0 0 10px;
   border: 1px solid #e67e22;
   border-radius: 4px;
@@ -151,7 +151,7 @@ input {
   margin: 7px;
 }
 .input-field {
-    width: 100%;
+    width: 80%;
   }
   .labels {
     color: white;
@@ -186,12 +186,7 @@ input {
 <div class="container">
     <form id="payments" method="POST">
   
-      <div class="labels">
-         <label id="name-label" for="arrest_id">Arrest id</label></div>
-      <div class="input-tab">
-      <input class="input-field" type="text" id="arrest_id" name="arrest_id" placeholder="Enter your name of arrested individual" required autofocus>
-      </div>
-       
+     
       <div class="labels">
         <label id="name-label" for="name"> Name</label></div>
      <div class="input-tab">
@@ -209,6 +204,13 @@ input {
       <div class="input-tab">
       <input class="input-field" type="text" id="amount_paid" name="amount_paid" placeholder="Enter amount of cash received" required autofocus>
       </div> 
+
+      <div class="labels">
+        <label id="name-label" for="for">For</label></div>
+     <div class="input-tab">
+     <input class="input-field" type="text" id="for" name="for" placeholder="Reason for Payment" required autofocus>
+     </div>
+      
       
       <div class="labels">
         <label id="name-label" for="receipt_no"> Receipt Number</label></div>

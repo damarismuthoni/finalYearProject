@@ -131,7 +131,10 @@ hr {
       
     </div>
     <div class="main_content">
-    <div class="header"> <h1>THE KENYA NATIONAL POLICE.</h1> </div>  
+    <div class="header">
+         <h1>THE KENYA NATIONAL POLICE</h1>
+         <h4>Welcome {{session()->get('user')}}</h4>
+         </div>  
     <div class="info">
     <div style="text-align:center">
       <p> <b> Our Vison:</b> <hr><br>

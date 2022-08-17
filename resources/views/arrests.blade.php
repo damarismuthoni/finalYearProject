@@ -195,7 +195,7 @@ input {
   <form id="arrests-form" method="POST">
 
     <div class="labels">
-       <label id="name-label" for="name"> Name of Culprit</label></div>
+       <label id="name-label" for="name"> Name</label></div>
     <div class="input-tab">
     <input class="input-field" type="text" id="name" name="name" placeholder="Enter name of arrested individual" required autofocus>
     </div>
@@ -215,7 +215,7 @@ input {
     <div class="labels">
         <label id="name-label" for="officer_reg_no"> Registration No.</label></div>
     <div class="input-tab">
-    <input class="input-field" type="text" id="officer_reg_no" name="officer-reg-no" placeholder="Enter registration no of arresting officer" required autofocus>
+    <input class="input-field" type="text" id="officer_reg_no" name="officer-reg-no" placeholder="Reg no of arresting officer" required autofocus>
     </div>
 
     <div class="labels">

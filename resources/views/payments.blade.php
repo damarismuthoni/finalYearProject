@@ -196,7 +196,7 @@ input {
       <div class="labels">
           <label id="name-label" for="citizens_id"> Id Number</label></div>
        <div class="input-tab">
-       <input class="input-field" type="text" id="citizens_id" name="citizens_id" placeholder="Enter national Id number of culprit" required autofocus>
+       <input class="input-field" type="text" id="citizens_id" name="citizens_id" placeholder="Enter  Id number/Passport number of Arrested Citizen" required autofocus>
        </div>
        
       <div class="labels">

@@ -263,11 +263,7 @@ button {
 <div class="container">
   <form id="abstract_form" method="POST">
     <p> <b> Complainant's Section: </b></p>
-  <div class="labels">
-    <label id="name-label" for="police_station">Police Station*</label></div>
-    <div class="input-tab">
-    <input class="input-field" type="text" id="police_station" name="police_station" placeholder="Enter the police statiion where report will be filed" required autofocus></div>
-
+ 
   <div class="labels">
     <label id="email-label" for="name">Name of Complainant*</label></div>
     <div class="input-tab">
@@ -288,16 +284,6 @@ button {
     <div class="input-tab">
     <input class="input-field" type="text" id="datails"  name="details" placeholder="Details of the incident" required autofocus></div>
    
-  <div class="labels">
-    <label id="name-label" for="witness">Witness Account</label></div>
-    <div class="input-tab">
-    <input class="input-field" type="text" id="witness" name="witness" placeholder="Witness account of incident if present" required autofocus></div>
-    
-  <div class="labels">
-   <label id="name-label" for="costs"> Estimated Amount for loss incurred</label></div>
-   <div class="input-tab">
-   <input class="input-field" type="text" id="costs" name="costs" placeholder="Estimated value of any losses incurred during incident being reported " required autofocus></div>
-     
   <div class="labels">
     <label id="name-label" for="date"> Date*</label></div>
     <div class="input-tab">
@@ -323,16 +309,16 @@ button {
   <div class="input-tab">
   <input class="input-field" type="text" id="abstact_serial_no" name="abstact_serial_no" placeholder="Enter the Abstract Serial Number" required></div>
     
+  <div class="labels">
+    <label id="name-label" for="police_station">Police Station*</label></div>
+    <div class="input-tab">
+    <input class="input-field" type="text" id="police_station" name="police_station" placeholder="Enter the police statiion where report will be filed" required autofocus></div>
+
 <div class="labels">
   <label id="name-label" for="police_station_id"> Police Station Id*</label></div>
   <div class="input-tab">
   <input class="input-field" type="text" id="police_station_id" name="police_station_id" placeholder=" Enter the police station id where the report was received" required autofocus></div>
   
-<div class="labels">
-  <label id="name-label" for="presiding_officer"> Officer In Charge*</label></div>
-  <div class="input-tab">
-  <input class="input-field" type="text" id="presiding_officer"  name="presiding_officer" placeholder="Name of Presiding Officer at the Police Station" required autofocus></div>
- 
 <div class="labels">
   <label id="name-label" for="police_notes">Police Notes*</label></div>
   <div class="input-tab">

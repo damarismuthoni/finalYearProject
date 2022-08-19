@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\AbstractsController;
+use App\Http\Controllers\ArrestsController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\PoliceStationController;
+use App\Models\PoliceStation;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,24 +40,35 @@ Route::group(['middleware' => []], function(){
         return view('profiles');
     });
     
-    Route::get('/abstracts', function () {
-        return view('abstracts');
+    Route::get('/abstracts/new', function () {
+        return view('abstract_form');
     });
-    
+
+    Route::get('/abstractlist' , [AbstractsController::class, 'get_abstracts'])->name('abstractlist');
+
     
     Route::get('/payments', function () {
-        return view('payments');
+        return view('paymentslist');
+    });
+
+    Route::get('/payments/new', function () {
+        return view('payments_form');
+    });
+
+    Route::get('/paymentslist' , [PaymentController::class, 'get_payments'])->name('paymentslist');
+
+    
+    Route::get('/arrestslist', function () {
+        return view('arrestslist');
     });
     
-    
-    Route::get('/arrests', function () {
-        return view('arrests');
+    Route::get('/arrests/new', function () {
+        return view('arrests_form');
     });
+
+    Route::get('/arrestslist' , [ArrestsController::class, 'get_arrests'])->name('arrestslist');
     
-    
-    Route::get('/police-station', function () {
-        return view('police-station');
-    });    
+    Route::get('/police-station', [PoliceStationController::class, 'displayReport']);    
 
 });
 

@@ -29,4 +29,15 @@ class PaymentController extends Controller
 
         return $newPayment;
     }
+    public function get_payments ( ){
+    
+        // // select * from abstracts;
+        $payment = Payment::get();
+        // ::with('police_station')->get();
+        // return $payment;
+    
+    
+        return view ('paymentslist', compact('payment'));
+    
+    }
 }

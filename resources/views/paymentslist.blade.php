@@ -97,6 +97,26 @@
         .wrapper .main_content .info div{
         margin-bottom: 20px;
         }
+        .btn-primary{
+            background-color: #080D38;
+            float: right;
+            padding: 15px 10px ;
+            margin-top: 10px;
+            margin-bottom: 29px;
+        }
+        .btn-primary:hover{
+           background-color: #080D38;
+        }
+
+        table, th, td {
+        background: white;
+        border-radius: 10px;
+        padding-right:10px ;
+        }
+
+        tr:hover {
+            cursor: pointer;
+        }
 
         @media (max-height: 500px){
         .social_media{
@@ -124,38 +144,42 @@ hr {
 
     <div class="main_content">
     <div class="header">
-         <h1>THE KENYA NATIONAL POLICE</h1>
-         <h4>Welcome {{session()->get('user')}}</h4>
+         <h1>PAYMENTS</h1>
          </div>  
     <div class="info">
     <div style="text-align:center">
-      <p> <b> Our Vison:</b> <hr><br>
-            To be a world class police service, with a people-friendly, responsive and professional workforce.<br> <br>
-             <b>   Our Mission: </b><br><hr><br>
-
-            We are committed to providing T quality police service to meet the expectations of our customers; by upholding the rule of law,<br>
-            creating and maintaining strong partnerships for a conducive social, economic and political development of Kenya. </p>
-            <b>Our Core Values:</b><br><br>
-            Be proactive and responsive in the discharge of our duties:<br>  
-            To exercise integrity and courtesy at all time;<br>
-            To cultivate and maintain partnership with all stakeholders;<br>
-            To create and maintain team spirit within the service;<br>
-            To be fair and firm in all our undertakings;<br>
-            To maintain a disciplined and professional workforce;<br>
-            To be gender sensitive;<br>
-            To promote, protect and respect the human rights of our customers.<br><br>
-            <b>  Core Functions:</b> <br> <br>
-            Maintenance of law and order;<br>
-            Preservation of peace;<br>
-            Protection of life and property;<br>
-            Prevention and detection of crime;<br>
-            Apprehension of offenders; and<br>
-            Enforcement of all laws and regulations with which it has been charged.<br>
-        </div>
+        <a href="/payments/new" type="button" class="btn btn-primary"><b>+</b> PAYMENT</a>
+        {{-- <div class="btn">
+            <a href="/abstracts/new" button id="submit" type="submit">Submit</button> </div>
+           --}}
+        <table  class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">ID Number</th>
+                <th scope="col">Amount Paid</th>    
+                <th scope="col">For</th>
+                <th scope="col">Receipt Number</th>
+              </tr>
+            </thead>
+            <tbody>
+                @foreach ($payment as $payment)
+                        </td>
+                        <td>{{$payment->name}}</td>
+                        <td>{{$payment->id_number}}</td>
+                        <td>{{$payment->amount_paid}}</td>
+                        <td>{{$payment->for}}</td>
+                        <td>{{$payment->receipt_number}}</td>
+                    </tr>
+                @endforeach
+              
+            </tbody>
+          </table>
           <div> </div>
       </div>
     </div>
 </div>
+
 
 </body>
 

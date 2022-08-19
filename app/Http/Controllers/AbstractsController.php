@@ -40,6 +40,16 @@ public function abstracts (Request $request)
 
     return $newAbstracts;
 }
+public function get_abstracts ( ){
+    
+    // select * from abstracts;
+    $abstracts = Abstracts::with('police_station')->get();
+    // return $abstracts;
+
+
+    return view ('abstractlist', compact('abstracts'));
+
+}
 }
 
 // {

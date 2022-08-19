@@ -97,13 +97,27 @@
         .wrapper .main_content .info div{
         margin-bottom: 20px;
         }
-
+        .btn-primary{
+            background-color: #080D38;
+            float: right;
+            padding: 15px 10px ;
+            margin-top: 10px;
+            margin-bottom: 29px;
+        }
+        .btn-primary:hover{
+           background-color: #080D38;
+        }
+        
         @media (max-height: 500px){
         .social_media{
             display: none !important;
         }
         }
-
+        table, th, td {
+        background: white;
+        border-radius: 10px;
+        padding-right:10px ;
+        }
         
 hr {
   width: 16%;
@@ -124,38 +138,47 @@ hr {
 
     <div class="main_content">
     <div class="header">
-         <h1>THE KENYA NATIONAL POLICE</h1>
-         <h4>Welcome {{session()->get('user')}}</h4>
+         <h1>ARRESTS</h1>
          </div>  
     <div class="info">
     <div style="text-align:center">
-      <p> <b> Our Vison:</b> <hr><br>
-            To be a world class police service, with a people-friendly, responsive and professional workforce.<br> <br>
-             <b>   Our Mission: </b><br><hr><br>
-
-            We are committed to providing T quality police service to meet the expectations of our customers; by upholding the rule of law,<br>
-            creating and maintaining strong partnerships for a conducive social, economic and political development of Kenya. </p>
-            <b>Our Core Values:</b><br><br>
-            Be proactive and responsive in the discharge of our duties:<br>  
-            To exercise integrity and courtesy at all time;<br>
-            To cultivate and maintain partnership with all stakeholders;<br>
-            To create and maintain team spirit within the service;<br>
-            To be fair and firm in all our undertakings;<br>
-            To maintain a disciplined and professional workforce;<br>
-            To be gender sensitive;<br>
-            To promote, protect and respect the human rights of our customers.<br><br>
-            <b>  Core Functions:</b> <br> <br>
-            Maintenance of law and order;<br>
-            Preservation of peace;<br>
-            Protection of life and property;<br>
-            Prevention and detection of crime;<br>
-            Apprehension of offenders; and<br>
-            Enforcement of all laws and regulations with which it has been charged.<br>
-        </div>
+        <a href="/arrests/new" type="button" class="btn btn-primary"><b>+</b> ARREST</a>
+        {{-- <div class="btn">
+            <a href="/abstracts/new" button id="submit" type="submit">Submit</button> </div>
+           --}}
+        <table  class="table table-striped" c>
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">ID Number</th>  
+                <th scope="col">Officer Reg No</th>
+                <th scope="col">Details</th>
+                <th scope="col">Category</th>  
+                <th scope="col">Date</th>  
+              </tr>
+            </thead>
+            <tbody>
+                @foreach ($arrests as $arrests)
+            </td>
+            <td>{{$arrests->name}}</td>
+            <td>{{$arrests->citizens_id}}</td>
+            <td>{{$arrests->police_station_id}}</td>
+            <td>
+                <span class="d-inline-block text-truncate" style="max-width: 250px;">
+                    {{$arrests->arrest_details}}</td>
+                </span>
+            <td>{{$arrests->category}}</td>
+            <td>{{$arrests->date_of_incident}}</td>
+        </tr>
+    @endforeach
+              
+            </tbody>
+          </table>
           <div> </div>
       </div>
     </div>
 </div>
+
 
 </body>
 

@@ -229,8 +229,9 @@ button {
     width: 100%;
   }
   .btn {
-    width: 100%;
+  
     margin: auto;
+    margin-right: 10%;
   }
 }
 
@@ -244,17 +245,7 @@ button {
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
 <div class="wrapper">
-    <div class="sidebar">
-        <ul>
-            <li><a href="homepage"></i>Home</a></li>
-            <li><a href="abstracts"></i>Abstracts</a></li>
-            <li><a href="payments"></i>Payments</a></li>
-            <li><a href="arrests"></i>Arrests</a></li>
-            <li><a href="police-station"></i>Portfolio</a></li>
-            
-        </ul> 
-      
-    </div>
+  @include('includes/sidebar')
             <div class="main_content">
             <div class="header"><h1>ABSTRACT FORM</h1></div>  
             </div>

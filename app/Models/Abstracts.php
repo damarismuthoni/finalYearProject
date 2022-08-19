@@ -22,5 +22,12 @@ class Abstracts extends Model
         'category_id',
         'date of incident'
     ];
+
+
+    public function police_station()
+    {
+        return $this->belongsTo(PoliceStation::class, 'police_station_id', 'id');
+    }
+
 }
 

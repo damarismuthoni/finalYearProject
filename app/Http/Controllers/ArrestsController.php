@@ -53,5 +53,12 @@ class ArrestsController extends Controller
     return $newArrests;
     }
 
-
+    public function get_arrests ( ){
+    
+    
+        $arrests = Arrests::get();
+    
+        return view ('arrestslist', compact('arrests'));
+    
+    }
 }

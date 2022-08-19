@@ -132,8 +132,8 @@
 
 .input-field {
   display: inline-block;
-  width: 80%;
-  padding: 8px;
+  width: 100%;
+  padding: 5px;
   margin: 18px 0 0 10px;
   border: 1px solid #e67e22;
   border-radius: 4px;
@@ -151,10 +151,30 @@ input {
   margin: 7px;
 }
 .input-field {
-    width: 80%;
+    width: 100%;
   }
   .labels {
     color: white;
+  }
+ #dropdown {
+  width: 100%;
+  padding: 5px;
+  margin: 20px 0 10px 10px;  
+  border: 1px solid #e67e22;
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 15px;
+}
+.btn-primary{
+    float:right;
+    background-color: #080D38;
+    margin: 18px;
+    margin-top: 29px;
+    margin-right: 8%;
+    width: 90px;
+}
+  .btn-primary :hover{
+    background-color: #080D38;
   }
     </style>
 
@@ -166,58 +186,69 @@ input {
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
 <div class="wrapper">
-    <div class="sidebar">
-        <ul>
-            <li><a href="homepage"></i>Home</a></li>
-            <li><a href="abstracts"></i>Abstracts</a></li>
-            <li><a href="payments"></i>Payments</a></li>
-            <li><a href="arrests"></i>Arrests</a></li>
-            <li><a href="police-station"></i>Portfolio</a></li>
-            
-        </ul> 
-      
-    </div>
-    <div class="main_content">
-        <div class="header"><h1>PAYMENTS.</h1></div>  
+  @include('includes/sidebar')
+
+<div class="main_content">
+<div class="header"><h1>ARREST FORM</h1></div>  
         
     </div>
 </div>
 
 <div class="container">
-    <form id="payments" method="POST">
-  
-     
-      <div class="labels">
-        <label id="name-label" for="name"> Name</label></div>
-     <div class="input-tab">
-     <input class="input-field" type="text" id="name" name="name" placeholder="Enter name" required autofocus>
-     </div>
-      
-      <div class="labels">
-          <label id="name-label" for="citizens_id"> Id Number</label></div>
-       <div class="input-tab">
-       <input class="input-field" type="text" id="citizens_id" name="citizens_id" placeholder="Enter  Id number/Passport number of Arrested Citizen" required autofocus>
-       </div>
-       
-      <div class="labels">
-          <label id="name-label" for="amount_paid"> Amount Paid</label></div>
-      <div class="input-tab">
-      <input class="input-field" type="text" id="amount_paid" name="amount_paid" placeholder="Enter amount of cash received" required autofocus>
-      </div> 
+  <form id="arrests-form" method="POST">
 
-      <div class="labels">
-        <label id="name-label" for="for">For</label></div>
-     <div class="input-tab">
-     <input class="input-field" type="text" id="for" name="for" placeholder="Reason for Payment" required autofocus>
-     </div>
-      
-      
-      <div class="labels">
-        <label id="name-label" for="receipt_no"> Receipt Number</label></div>
+    <div class="labels">
+       <label id="name-label" for="name"> Name</label></div>
     <div class="input-tab">
-    <input class="input-field" type="text" id="receipt_no" name="receipt_no" placeholder="Enter receipt no" required autofocus>
+    <input class="input-field" type="text" id="name" name="name" placeholder="Enter name of arrested individual" required autofocus>
     </div>
 
+    <div class="labels">
+        <label id="name-label" for="citizens_id"> National Id Number</label></div>
+     <div class="input-tab">
+     <input class="input-field" type="text" id="citizens_id" name="citizens_id" placeholder="Enter national Id number" required autofocus>
+     </div>
+    
+    <div class="labels">
+        <label id="name-label" for="police_station_id"> Police Station  Id</label></div>
+    <div class="input-tab">
+    <input class="input-field" type="text" id="police_station_id" name="police_station_id" placeholder="Enter Id of the Police Station" required autofocus>
+    </div>
+     
+   
+    <div class="labels">
+        <label id="name-label" for="arrest_details"> Details</label></div>
+    <div class="input-tab">
+    <input class="input-field" type="text" id="arrest_details" name="arrest_details" placeholder="Enter details of arrest" required autofocus>
+    </div>
+    
+    <div class="labels">
+        <label for="dropdown">Category</label></div>
+        <div class="input-tab">
+        <select id="dropdown" name="status">
+        <option disabled value selected>Please select a category</option>
+        <option value="<=5">Serious</option>
+        <option value="<=10">Non-Serious</option>
+        </select>
+      </div>
 
+        <div class="labels">
+        <label id="name-label" for="date_of_incident"> Arrest Date</label></div>
+    <div class="input-tab">
+    <input class="input-field" type="date" id="date_of_incident" name="date_of_incident" placeholder="Enter date of arrest" required autofocus>
+    </div>
+
+    <button type="button" class="btn btn-primary">Submit</button>
+
+    
+
+    </form>
+
+  
+    
+    
+         
+     
+    
 </body>
 </html>

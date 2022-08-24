@@ -68,7 +68,7 @@
             <div class="form-group was validated"></div>
 
             <label class="form-label" for="reg_no">Registration Number</label>
-            <input class="form-control" name="reg_no" type="name" id="reg_no" value="ofc/3843/4991" required>
+            <input class="form-control" name="reg_no" type="name" id="reg_no" value="ofc/3821/4991" required>
 
             <div class="invalid-feedback">
                     please enter your Registration Number
@@ -77,7 +77,7 @@
             <div class="form-group"></div>
 
                 <label class="form-label" for="password">Password</label>
-                <input  class="form-control" name="password" type="password" id="password" value="jacob123" required>
+                <input  class="form-control" name="password" type="password" id="password" value="alan123" required>
 
             <div class="invalid-feedback">
                     please enter your password

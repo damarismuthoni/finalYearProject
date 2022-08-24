@@ -14,8 +14,10 @@ class Payment extends Model
     protected $table  = 'payment';
 
     protected $fillable = [
-        'arrest_id',
+        'name',
+        'id_number',
         'amount_paid',
+        'for',
         'receipt_number'
     ];
 }

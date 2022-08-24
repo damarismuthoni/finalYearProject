@@ -97,12 +97,113 @@
         .wrapper .main_content .info div{
         margin-bottom: 20px;
         }
+       
+       .footer{
+        margin-left: 20px;
+       }
+       
+       h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {}
+        a,
+        a:hover,
+        a:focus,
+        a:active {
+            text-decoration: none;
+            outline: none;
+        }
+        
+        a,
+        a:active,
+        a:focus {
+            color: #333;
+            text-decoration: none;
+            transition-timing-function: ease-in-out;
+            -ms-transition-timing-function: ease-in-out;
+            -moz-transition-timing-function: ease-in-out;
+            -webkit-transition-timing-function: ease-in-out;
+            -o-transition-timing-function: ease-in-out;
+            transition-duration: .2s;
+            -ms-transition-duration: .2s;
+            -moz-transition-duration: .2s;
+            -webkit-transition-duration: .2s;
+            -o-transition-duration: .2s;
+        }
+        
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        img {
+    max-width: 100%;
+    height: auto;
+}
+        section {
+            padding: 60px 0;
+           /* min-height: 100vh;*/
+        }
+.footer {
+    background-color: #B83818;
+    background: ;
+    padding-top: 80px;
+    padding-bottom: 40px;
+    margin-left:20%; 
+}
+/*END FOOTER SOCIAL DESIGN*/
+.single_footer{}
+@media only screen and (max-width:768px) { 
+.single_footer{margin-bottom:30px;}
+}
+.single_footer h4 {
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+.single_footer h4::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 40px;
+    background: #fff;
+    margin-top: 20px;
+}
+.single_footer p{color:#fff;}
+.single_footer ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.single_footer ul li{}
+.single_footer ul li a {
+    color: #fff;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    line-height: 36px;
+    font-size: 15px;
+    text-transform: capitalize;
+}
+.single_footer ul li a:hover { color: #ec91a6; }
 
-        @media (max-height: 500px){
-        .social_media{
-            display: none !important;
-        }
-        }
+.single_footer_address{}
+.single_footer_address ul{}
+.single_footer_address ul li{color:#fff;}
+.single_footer_address ul li span {
+    font-weight: 400;
+    color: #fff;
+    line-height: 28px;
+}
+.contact_social ul {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
 
         
 hr {
@@ -133,7 +234,7 @@ hr {
             To be a world class police service, with a people-friendly, responsive and professional workforce.<br> <br>
              <b>   Our Mission: </b><br><hr><br>
 
-            We are committed to providing T quality police service to meet the expectations of our customers; by upholding the rule of law,<br>
+            We are committed to providing  quality police service to meet the expectations of our customers; by upholding the rule of law,<br>
             creating and maintaining strong partnerships for a conducive social, economic and political development of Kenya. </p>
             <b>Our Core Values:</b><br><br>
             Be proactive and responsive in the discharge of our duties:<br>  
@@ -159,8 +260,49 @@ hr {
 
 </body>
 
-<footer>
-    
-    
-</footer>
+<<div class="footer">
+  <div class="container">     
+      <div class="row">                       
+          <div class="col-lg-4 col-sm-4 col-xs-12">
+              <div class="single_footer">
+                  <h4>Related Links</h4>
+                  <ul>
+                      <li><a href="#">National Police Service</a></li>
+                      <li><a href="#">Directorate of Criminal Investigations </a></li>
+                      <li><a href="#">National Police Service Commission</a></li>
+                      <li><a href="#">Kenya Law Reports</a></li>
+                      <li><a href="#">Independent Policing Oversight Authority</a></li>
+                      <li><a href="#">Office of The Director of Public Prosecutions</a></li>
+                  </ul>
+              </div>
+          </div><!--- END COL --> 
+          <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="single_footer single_footer_address">
+                  <h4>Useful Links</h4>
+                  <ul>
+                      <li><a href="#">Kenya Police Sacco</a></li>
+                      <li><a href="#">eCitizen </a></li>
+                      <li><a href="#">Huduma Kenya</a></li>
+                  </ul>
+              </div>
+          </div><!--- END COL -->
+          <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="single_footer single_footer_address">
+                  <h4>Contact Us</h4>
+                
+              </div>
+              <div class="single_footer">
+                <ul>
+                  <li><a href="#">Kenya Police Headquarters,  </a></li>
+                  <li><a href="#">Vigilance House, Harambee Avenue,</a></li>
+                  <li><a href="#">PO BOX 30083,</a></li>
+                  <li><a href="#">Nairobi, Kenya</a></li>
+                  <li><a href="#">Telephone: (020) 341411/6/8</a></li>
+              </ul>
+              </div>                          
+          </div><!--- END COL -->         
+      </div><!--- END ROW --> 
+                    
+  </div><!--- END CONTAINER -->
+</div>
 </html>

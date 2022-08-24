@@ -252,13 +252,13 @@ button {
 </div>
 
 <div class="container">
-  <form id="abstract_form" method="POST">
-    <p> <b> Complainant's Section: </b></p>
+  <form id="police-abstract" method="POST" action="/api/abstracts">
+    <p> <b> Complainant's Details: </b></p>
  
   <div class="labels">
     <label id="email-label" for="name">Name of Complainant*</label></div>
     <div class="input-tab">
-    <input class="input-field" type="text" id="name" name="name" placeholder="Enter your Full Names  as per National ID" required></div>
+    <input class="input-field" type="text" id="name" name="name_of_complainant" placeholder="Enter your Full Names  as per National ID" required></div>
       
     <div class="labels">
       <label id="name-label" for="idnumber">ID Number*</label></div>
@@ -278,55 +278,50 @@ button {
   <div class="labels">
     <label id="name-label" for="date"> Date*</label></div>
     <div class="input-tab">
-    <input class="input-field" type="date" id="date" name="date" placeholder="Date which the incident occured" required autofocus></div> <br>
+    <input class="input-field" type="date" id="date" name="date_of_incident" placeholder="Date which the incident occured" required autofocus></div> <br>
       
-</form><br>
 
- <form id="police-abstract" method="POST">
-  <p> <b> To be filled by an Officer: </b></p>
+ 
+  <p> <b> Official Details: </b></p>
 
 <div class="labels">
   <label id="name-label" for="received_by"> Received By*</label></div>
   <div class="input-tab">
-  <input class="input-field" type="text" id="received_by" name="received_by" placeholder="Name of Officer who will handle the complaint" required autofocus></div>
+    <select id="dropdown" name="received_by">
+      <option disabled value selected>officer </option>
+      @foreach ($policeNames as $police)
+      <option value="{{$police->id}}">{{$police->police_name}}</option>
+      @endforeach
+      </select>
+  </div>
 
-<div class="labels">
-  <label id="name-label" for="police_id"> Police Id*</label></div>
-  <div class="input-tab">
-  <input class="input-field" type="text" id="police_id" name="police_id" placeholder="Id number of police handling the report" required autofocus></div>
-    
-<div class="labels">
-  <label id="email-label" for="abstact_serial_no"> Abstract Serial Number*</label></div>
-  <div class="input-tab">
-  <input class="input-field" type="text" id="abstact_serial_no" name="abstact_serial_no" placeholder="Enter the Abstract Serial Number" required></div>
-    
   <div class="labels">
-    <label id="name-label" for="police_station">Police Station*</label></div>
+    <label id="name-label" for="police_station_id">Police Station*</label></div>
     <div class="input-tab">
-    <input class="input-field" type="text" id="police_station" name="police_station" placeholder="Enter the police statiion where report will be filed" required autofocus></div>
+      <select id="dropdown" name="police_station_id">
+        <option disabled value selected>Select a police station</option>
+        @foreach($policeStations as $policeStation)
+        <option value="{{$policeStation->id}}">{{$policeStation->police_station_name}}</option>
+        @endforeach
+        </select>
+    </div>
 
 <div class="labels">
-  <label id="name-label" for="police_station_id"> Police Station Id*</label></div>
+  <label id="name-label" for="police_note">Police Notes*</label></div>
   <div class="input-tab">
-  <input class="input-field" type="text" id="police_station_id" name="police_station_id" placeholder=" Enter the police station id where the report was received" required autofocus></div>
-  
-<div class="labels">
-  <label id="name-label" for="police_notes">Police Notes*</label></div>
-  <div class="input-tab">
-  <input class="input-field" type="text" id="police_notes" name="police_notes" placeholder="Details of the police investigation concerning thw report" required autofocus></div>
+  <input class="input-field" type="text" id="police_note" name="police_note" placeholder="Details of the police investigation concerning thw report" required autofocus></div>
 
 <div class="labels">
   <label for="dropdown">Status*</label></div>
   <div class="input-tab">
   <select id="dropdown" name="status">
   <option disabled value selected>Status of Investigation</option>
-  <option value="<=5">solved</option>
-  <option value="<=10">unsolved</option>
+  <option value="solved">solved</option>
+  <option value="unsolved">unsolved</option>
   </select>
 </div>
 
- <div class="btn">
-  <button id="submit" type="submit">Submit</button> </div>
+<button type="submit" class="btn btn-primary" value="submit">Submit</button>
 
 </form>
  

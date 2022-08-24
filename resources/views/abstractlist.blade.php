@@ -170,7 +170,7 @@ hr {
                             </span> 
                         </td>
                         <td>{{$abstract->telephone_number}}</td>
-                        <td>{{$abstract->received_by}}</td>
+                        <td>{{$abstract->police->police_name}}</td>
                         <td>{{$abstract->status}}</td>
                         <td>{{$abstract->date_of_incident}}</td> 
                     </tr>

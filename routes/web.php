@@ -40,9 +40,8 @@ Route::group(['middleware' => []], function(){
         return view('profiles');
     });
     
-    Route::get('/abstracts/new', function () {
-        return view('abstract_form');
-    });
+   
+    Route::get('abstracts/new', [AbstractsController::class,'new_abstract']);
 
     Route::get('/abstractlist' , [AbstractsController::class, 'get_abstracts'])->name('abstractlist');
 

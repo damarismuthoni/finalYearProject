@@ -186,41 +186,45 @@ input {
 </div>
 
 <div class="container">
-    <form id="payments" method="POST">
-  
+    <form  id="payment" method="POST"  action="/api/payment" >
+      {{-- <form class="needs-validation" method="POST" action="/api/register"> --}}
+
      
       <div class="labels">
         <label id="name-label" for="name"> Name</label></div>
      <div class="input-tab">
-     <input class="input-field" type="text" id="name" name="name" placeholder="Enter name" required autofocus>
+     <input class="input-field" type="text" id="name" name="name" value="" placeholder="Enter name" required autofocus>
      </div>
       
       <div class="labels">
           <label id="name-label" for="citizens_id"> Id Number</label></div>
        <div class="input-tab">
-       <input class="input-field" type="text" id="citizens_id" name="citizens_id" placeholder="Enter  Id number/Passport number of Arrested Citizen" required autofocus>
+       <input class="input-field" type="text" id="citizens_id" name="id_number" value="" placeholder="Enter  Id number/Passport number of Arrested Citizen" required autofocus>
        </div>
        
       <div class="labels">
           <label id="name-label" for="amount_paid"> Amount Paid</label></div>
       <div class="input-tab">
-      <input class="input-field" type="text" id="amount_paid" name="amount_paid" placeholder="Enter amount of cash received" required autofocus>
+      <input class="input-field" type="text" id="amount_paid" name="amount_paid" value="" placeholder="Enter amount of cash received" required autofocus>
       </div> 
 
       <div class="labels">
         <label id="name-label" for="for">For</label></div>
      <div class="input-tab">
-     <input class="input-field" type="text" id="for" name="for" placeholder="Reason for Payment" required autofocus>
+     <input class="input-field" type="text" id="for" name="for" value="" placeholder="Reason for Payment" required autofocus>
      </div>
       
       
       <div class="labels">
         <label id="name-label" for="receipt_no"> Receipt Number</label></div>
     <div class="input-tab">
-    <input class="input-field" type="text" id="receipt_no" name="receipt_no" placeholder="Enter receipt no" required autofocus>
+    <input class="input-field" type="text" id="receipt_no" name="receipt_number" value="" placeholder="Enter receipt no" required autofocus>
     </div><br>
   
-    <button type="button" class="btn btn-primary">Submit</button>
-
+    <button type="submit" class="btn btn-primary" value="submit">Submit</button>
+    {{--              <input type="submit" class="btn form-control btn-success btn-block" name="" value="Submit">
+ --}}
+    </form>
+</div>
 </body>
 </html>

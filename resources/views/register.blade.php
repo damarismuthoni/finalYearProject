@@ -45,7 +45,7 @@
 
 <div class="register">
 
-    <form class="needs-validation" method="POST" action="/api/register">
+    <form class="needs-validation" method="POST" form action="/api/register">
 
         <h1>Register</h1>
 

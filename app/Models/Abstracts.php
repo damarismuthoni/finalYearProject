@@ -29,5 +29,10 @@ class Abstracts extends Model
         return $this->belongsTo(PoliceStation::class, 'police_station_id', 'id');
     }
 
+    public function police()
+    {
+        return $this->belongsTo(PoliceUser::class, 'received_by', 'id');
+    }
+
 }
 

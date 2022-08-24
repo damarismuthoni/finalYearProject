@@ -33,6 +33,8 @@ class PoliceUserController extends Controller
     
     // Person a = new Person();
     // String name = a.name(); 
+
+    
     public function register(Request $request){
         
         $validatedData = Validator::make($request->all(), [
@@ -42,8 +44,6 @@ class PoliceUserController extends Controller
             'phone_no' => ['required', 'unique:police_users'],
             'password' => ['required']
         ]);
-
-       
 
         if ($validatedData->fails()) {
             $errors =  $validatedData->errors();
@@ -62,7 +62,6 @@ class PoliceUserController extends Controller
             'phone_no' => $request->phone_no,
             'password' => bcrypt($request->password)
         ]);
-
 
          // If the new user was created successfully (the object is not null)
          if ($newPoliceUser == NULL) {

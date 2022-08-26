@@ -254,31 +254,35 @@ button {
 <div class="container">
   <form id="police-abstract" method="POST" action="/api/abstracts">
     <p> <b> Complainant's Details: </b></p>
+
+    @if(isset($abstract))
+    <input class="input-field" type="text" id="id" name="id" value="{{isset($abstract) ? $abstract->id : ''}}" placeholder="ID" hidden></div> <br>
+    @endif
  
   <div class="labels">
     <label id="email-label" for="name">Name of Complainant*</label></div>
     <div class="input-tab">
-    <input class="input-field" type="text" id="name" name="name_of_complainant" placeholder="Enter your Full Names  as per National ID" required></div>
+    <input class="input-field" type="text" id="name" name="name_of_complainant" value="{{isset($abstract) ? $abstract->name_of_complainant : ''}}" placeholder="Enter your Full Names  as per National ID" required></div>
       
     <div class="labels">
       <label id="name-label" for="idnumber">ID Number*</label></div>
       <div class="input-tab">
-      <input class="input-field" type="text" id="citizen_id" name="citizen_id" placeholder="Complainant National Id No/Passport No" required autofocus></div>
+      <input class="input-field" type="text" id="citizen_id" name="citizen_id" value="{{isset($abstract) ? $abstract->citizen_id : ''}}"placeholder="Complainant National Id No/Passport No" required autofocus></div>
     
   <div class="labels">
     <label id="name-label" for="telephonenumber">Telephone Number*</label></div>
     <div class="input-tab">
-    <input class="input-field" type="text" id="telephone_number" name="telephone_number" placeholder="Enter your Telephone No" required autofocus></div>
+    <input class="input-field" type="text" id="telephone_number" name="telephone_number" value="{{isset($abstract) ? $abstract->telephone_number : ''}}" placeholder="Enter your Telephone No" required autofocus></div>
     
   <div class="labels">
     <label id="name-label" for="details"> Incident Details*</label></div>
     <div class="input-tab">
-    <input class="input-field" type="text" id="datails"  name="details" placeholder="Details of the incident" required autofocus></div>
+    <input class="input-field" type="text" id="datails"  name="details" value="{{isset($abstract) ? $abstract->details : ''}}" placeholder="Details of the incident" required autofocus></div>
    
   <div class="labels">
     <label id="name-label" for="date"> Date*</label></div>
     <div class="input-tab">
-    <input class="input-field" type="date" id="date" name="date_of_incident" placeholder="Date which the incident occured" required autofocus></div> <br>
+    <input class="input-field" type="date" id="date" name="date_of_incident" value="{{isset($abstract) ? $abstract->date_of_incident : ''}}" placeholder="Date which the incident occured" required autofocus></div> <br>
       
 
  
@@ -290,7 +294,11 @@ button {
     <select id="dropdown" name="received_by">
       <option disabled value selected>officer </option>
       @foreach ($policeNames as $police)
-      <option value="{{$police->id}}">{{$police->police_name}}</option>
+        @if(isset($abstract) && $abstract->received_by == $police->id)
+        <option value="{{$police->id}}" selected>{{$police->police_name}}</option>
+        @else
+        <option value="{{$police->id}}">{{$police->police_name}}</option>
+        @endif
       @endforeach
       </select>
   </div>
@@ -301,7 +309,11 @@ button {
       <select id="dropdown" name="police_station_id">
         <option disabled value selected>Select a police station</option>
         @foreach($policeStations as $policeStation)
-        <option value="{{$policeStation->id}}">{{$policeStation->police_station_name}}</option>
+          @if(isset($abstract) && $abstract->police_station_id == $policeStation->id)
+          <option value="{{$policeStation->id}}" selected>{{$policeStation->police_station_name}}</option>
+          @else
+          <option value="{{$policeStation->id}}" >{{$policeStation->police_station_name}}</option>
+          @endif
         @endforeach
         </select>
     </div>
@@ -309,15 +321,20 @@ button {
 <div class="labels">
   <label id="name-label" for="police_note">Police Notes*</label></div>
   <div class="input-tab">
-  <input class="input-field" type="text" id="police_note" name="police_note" placeholder="Details of the police investigation concerning thw report" required autofocus></div>
+  <input class="input-field" type="text" id="police_note" name="police_note" value="{{isset($abstract) ? $abstract->police_note : ''}}" placeholder="Details of the police investigation concerning thw report" required autofocus></div>
 
 <div class="labels">
   <label for="dropdown">Status*</label></div>
   <div class="input-tab">
   <select id="dropdown" name="status">
   <option disabled value selected>Status of Investigation</option>
-  <option value="solved">solved</option>
-  <option value="unsolved">unsolved</option>
+  @foreach(["solved", "unsolved"] as $status)
+          @if(isset($abstract) && $abstract->status == $status)
+            <option value="{{$status}}" selected>{{$status}}</option>
+          @else
+            <option value="{{$status}}">{{$status}}</option>
+          @endif
+        @endforeach
   </select>
 </div>
 

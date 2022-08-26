@@ -41,13 +41,18 @@ Route::group(['middleware' => []], function(){
     });
     
    
-    Route::get('abstracts/new', [AbstractsController::class,'new_abstract']);
+    Route::get('abstracts/new', [AbstractsController::class,'new_abstract'])->name('abstract_form');
+    Route::get('abstracts/edit/{id}', [AbstractsController::class,'edit_abstract'])->name('edit_abstract');
 
     Route::get('/abstractlist' , [AbstractsController::class, 'get_abstracts'])->name('abstractlist');
 
-    
+    Route::get('/arrests/new' , [ ArrestsController::class, 'new_arrests']);
+
     Route::get('/payments', function () {
         return view('paymentslist');
+    });
+    Route::get('/arrests', function () {
+        return view('arrestslist');
     });
 
     Route::get('/payments/new', function () {
@@ -61,9 +66,7 @@ Route::group(['middleware' => []], function(){
         return view('arrestslist');
     });
     
-    Route::get('/arrests/new', function () {
-        return view('arrests_form');
-    });
+  
 
     Route::get('/arrestslist' , [ArrestsController::class, 'get_arrests'])->name('arrestslist');
     

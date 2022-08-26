@@ -86,6 +86,7 @@
         background: #B83818;
         color: #ffffff;
         border-bottom: 1px solid #e0e4e8;
+        text-align: center;
         }
 
         .wrapper .main_content .info{
@@ -97,36 +98,118 @@
         .wrapper .main_content .info div{
         margin-bottom: 20px;
         }
-        .btn-primary{
-            background-color: #080D38;
-            float: right;
-            padding: 15px 10px ;
-            margin-top: 10px;
-            margin-bottom: 29px;
+       
+       .footer{
+        margin-left: 20px;
+       }
+       
+       h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {}
+        a,
+        a:hover,
+        a:focus,
+        a:active {
+            text-decoration: none;
+            outline: none;
         }
-        .btn-primary:hover{
-           background-color: #080D38;
+        
+        a,
+        a:active,
+        a:focus {
+            color: #333;
+            text-decoration: none;
+            transition-timing-function: ease-in-out;
+            -ms-transition-timing-function: ease-in-out;
+            -moz-transition-timing-function: ease-in-out;
+            -webkit-transition-timing-function: ease-in-out;
+            -o-transition-timing-function: ease-in-out;
+            transition-duration: .2s;
+            -ms-transition-duration: .2s;
+            -moz-transition-duration: .2s;
+            -webkit-transition-duration: .2s;
+            -o-transition-duration: .2s;
         }
-        table, th, td {
-        background: white;
-        border-radius: 10px;
-        padding-right:10px ;
+        
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
         }
+        img {
+    max-width: 100%;
+    height: auto;
+}
+        section {
+            padding: 60px 0;
+           /* min-height: 100vh;*/
+        }
+.footer {
+    background-color: #B83818;
+    background: ;
+    padding-top: 80px;
+    padding-bottom: 40px;
+    margin-left:20%; 
+}
+/*END FOOTER SOCIAL DESIGN*/
+.single_footer{}
+@media only screen and (max-width:768px) { 
+.single_footer{margin-bottom:30px;}
+}
+.single_footer h4 {
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+.single_footer h4::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 40px;
+    background: #fff;
+    margin-top: 20px;
+}
+.single_footer p{color:#fff;}
+.single_footer ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.single_footer ul li{}
+.single_footer ul li a {
+    color: #fff;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    line-height: 36px;
+    font-size: 15px;
+    text-transform: capitalize;
+}
+.single_footer ul li a:hover { color: #ec91a6; }
 
-        @media (max-height: 500px){
-        .social_media{
-            display: none !important;
-        }
-        }
+.single_footer_address{}
+.single_footer_address ul{}
+.single_footer_address ul li{color:#fff;}
+.single_footer_address ul li span {
+    font-weight: 400;
+    color: #fff;
+    line-height: 28px;
+}
+.contact_social ul {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
 
         
 hr {
   width: 16%;
   margin: 10px auto;}
-
-    tr {
-        cursor: pointer;
-    }
 
     </style>
 
@@ -140,61 +223,3 @@ hr {
 <div class="wrapper">
    
     @include('includes/sidebar')
-
-    <div class="main_content"> 
-    <div class="header">
-         <h1>ABSTRACTS</h1>
-         </div>  
-    <div class="info">
-    <div style="text-align:center">
-        <a href="/abstracts/new" type="button" class="btn btn-primary"><b>+ </b> ABSTRACT</a>
-        {{-- <div class="btn">
-            <a href="/abstracts/new" button id="submit" type="submit">Submit</button> </div>
-           --}}
-        <table  class="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">police station</th>
-                <th scope="col">Name of Complainant</th>    
-                <th scope="col">Details</th>
-                <th scope="col">Telephone Number</th>
-                <th scope="col">Received By</th>
-                <th scope="col">Status</th>
-                <th scope="col">Date of incident</th>
-              </tr>
-            </thead>
-            <tbody>
-                @foreach ($abstracts as $abstract)
-                    
-                    <tr onclick="window.location.href='{{route('edit_abstract', $abstract->id)}}'">
-                            <td>{{$abstract->police_station->police_station_name}}</td>
-                            <td>{{$abstract->name_of_complainant}}</td>
-                            <td>
-                                <span class="d-inline-block text-truncate" style="max-width: 250px;">
-                                    {{$abstract->details}}
-                                </span> 
-                            </td>
-                            <td>{{$abstract->telephone_number}}</td>
-                            <td>{{$abstract->police->police_name}}</td>
-                            <td>{{$abstract->status}}</td>
-                            <td>{{$abstract->date_of_incident}}</td> 
-                    </tr>
-                
-                @endforeach
-               
-              
-            </tbody>
-          </table>
-          
-      </div>
-    </div>
-</div>
-
-
-</body>
-
-<footer>
-    
-    
-</footer>
-</html>

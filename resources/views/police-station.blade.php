@@ -138,7 +138,7 @@
               <div class="col">
                 <div class="card">
                     <div class="card-body">
-                      <h5 class="card-title">{{$statistics['abstracts']}}</h5>
+                      <h1 class="card-title">{{$statistics['abstracts']}}</h1>
                       <p class="card-text">Total Abstracts</p>
                     </div>
                   </div>
@@ -146,7 +146,7 @@
               <div class="col">
                 <div class="card">
                     <div class="card-body">
-                      <h5 class="card-title">{{$statistics['arrests']}}</h5>
+                      <h1 class="card-title">{{$statistics['arrests']}}</h1>
                       <p class="card-text">Total Arrests</p>
                     </div>
                   </div>
@@ -154,7 +154,7 @@
             <div class="col">
                 <div class="card">
                     <div class="card-body">
-                      <h5 class="card-title">Ksh {{$statistics['payments']}}</h5>
+                      <h1 class="card-title">Ksh {{$statistics['payments']}}</h1>
                       <p class="card-text">Total Payment</p>
                     </div>
                   </div>
@@ -162,7 +162,7 @@
               <div class="col">
                 <div class="card">
                     <div class="card-body">
-                      <h5 class="card-title">{{$statistics['arrests_today']}}</h5>
+                      <h1 class="card-title">{{$statistics['arrests_today']}}</h1>
                       <p class="card-text">Arrests Today</p>
                     </div>
                   </div>

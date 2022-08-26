@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Arrests;
+use App\Models\PoliceStation;
 use Illuminate\Http\Request;
 
 class ArrestsController extends Controller
@@ -38,27 +39,40 @@ class ArrestsController extends Controller
 
      $newArrests = new Arrests();
 
+    $newArrests->name =  $request->name;
     $newArrests->citizens_id =  $request->citizens_id;
     $newArrests->police_station_id = $request->police_station_id;
-    $newArrests->officer_reg_no = $request->officer_reg_no;
-    $newArrests->category = $request->category;
     $newArrests->arrest_details = $request->arrest_details;
-    $newArrests->arrest_location = $request->arrest_location;
-    $newArrests->fine_amount = $request->fine_amount;
-    $newArrests->fine_paid = $request->fine_paid;
+    $newArrests->category = $request->category;
     $newArrests->date_of_incident = $request->date_of_incident;
 
     $newArrests->save();
 
-    return $newArrests;
+    // return $newArrests;
+    return $this->get_arrests();
     }
 
+    // public function police_station()
+    // {
+    //     return $this->belongsTo(PoliceStation::class, 'police_station_id', 'id');
+    // }
+
+    
     public function get_arrests ( ){
     
     
-        $arrests = Arrests::get();
-    
-        return view ('arrestslist', compact('arrests'));
-    
+        $arrests = Arrests::with('police_station', )->get();
+        
+        return view ('arrestslist', compact('arrests' ));
+        
+        // return $arrests;
     }
+
+
+    public function new_arrests(){
+
+        $policeStations = PoliceStation::all();
+        return view('arrests_form' , compact('policeStations'));
+    }
+
 }

@@ -195,7 +195,7 @@ input {
 </div>
 
 <div class="container">
-  <form id="arrests-form" method="POST">
+  <form id="arrests-form" method="POST" action="/api/arrests">
 
     <div class="labels">
        <label id="name-label" for="name"> Name</label></div>
@@ -209,11 +209,17 @@ input {
      <input class="input-field" type="text" id="citizens_id" name="citizens_id" placeholder="Enter national Id number" required autofocus>
      </div>
     
-    <div class="labels">
-        <label id="name-label" for="police_station_id"> Police Station  Id</label></div>
-    <div class="input-tab">
-    <input class="input-field" type="text" id="police_station_id" name="police_station_id" placeholder="Enter Id of the Police Station" required autofocus>
-    </div>
+     <div class="labels">
+      <label id="name-label" for="police_station_id">Police Station*</label></div>
+      <div class="input-tab">
+        <select id="dropdown" name="police_station_id">
+          <option disabled value selected>Select a police station</option>
+          @foreach($policeStations as $policeStation)
+          <option value="{{$policeStation->id}}">{{$policeStation->police_station_name}}</option>
+          @endforeach
+          </select>
+      </div>
+  
      
    
     <div class="labels">
@@ -223,12 +229,12 @@ input {
     </div>
     
     <div class="labels">
-        <label for="dropdown">Category</label></div>
+        <label for="category">Category</label></div>
         <div class="input-tab">
         <select id="dropdown" name="status">
         <option disabled value selected>Please select a category</option>
-        <option value="<=5">Serious</option>
-        <option value="<=10">Non-Serious</option>
+        <option value="serious">Serious</option>
+        <option value="non serious">Non-Serious</option>
         </select>
       </div>
 
@@ -238,7 +244,7 @@ input {
     <input class="input-field" type="date" id="date_of_incident" name="date_of_incident" placeholder="Enter date of arrest" required autofocus>
     </div>
 
-    <button type="button" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Submit</button>
 
     
 

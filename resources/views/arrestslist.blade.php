@@ -151,7 +151,7 @@ hr {
               <tr>
                 <th scope="col">Name</th>
                 <th scope="col">ID Number</th>  
-                <th scope="col">Officer Reg No</th>
+                <th scope="col"> Station id</th>
                 <th scope="col">Details</th>
                 <th scope="col">Category</th>  
                 <th scope="col">Date</th>  
@@ -162,7 +162,7 @@ hr {
             </td>
             <td>{{$arrests->name}}</td>
             <td>{{$arrests->citizens_id}}</td>
-            <td>{{$arrests->police_station_id}}</td>
+            <td>{{$arrests->police_station->police_station_name}}</td>
             <td>
                 <span class="d-inline-block text-truncate" style="max-width: 250px;">
                     {{$arrests->arrest_details}}</td>

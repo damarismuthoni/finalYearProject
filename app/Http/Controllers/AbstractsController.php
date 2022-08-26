@@ -24,11 +24,15 @@ class AbstractsController extends Controller
         
     }
 
-public function abstracts (Request $request)
+public function saveAbstracts (Request $request)
 {
 
- 
- $newAbstracts = new Abstracts();
+    if($request->id){
+        $newAbstracts = Abstracts::find($request->id);
+    } else {
+        $newAbstracts = new Abstracts();
+    }
+    
 
     $newAbstracts->name_of_complainant = $request->name_of_complainant;
     $newAbstracts->citizen_id = $request->citizen_id;
@@ -45,7 +49,6 @@ public function abstracts (Request $request)
 
     $newAbstracts->save();
 
-    // return $newAbstracts;
     return $this->get_abstracts();
 }
 public function get_abstracts ( ){
@@ -63,6 +66,19 @@ public function new_abstract(){
 
     return view('abstract_form', compact('policeNames', 'policeStations'));
 }
+
+
+
+
+public function edit_abstract($id){
+    $policeNames = PoliceUser::all();
+
+    $policeStations = PoliceStation::all();
+    $abstract = Abstracts::find($id);
+
+    return view('abstract_form', compact('policeNames', 'policeStations', 'abstract'));
+}
+
 
 
 public function generateRandomString($length, $type) {

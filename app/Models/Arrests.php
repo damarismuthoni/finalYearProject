@@ -26,5 +26,10 @@ protected $fillable = [
     'fine_paid',
     'date_of_incident'
 ];
+ public function police_station()
+   {
+        return $this->belongsTo(PoliceStation::class, 'police_station_id', 'id');
+
 
 }
+}   

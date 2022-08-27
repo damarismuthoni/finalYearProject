@@ -49,7 +49,7 @@ class ArrestsController extends Controller
     $newArrests->save();
 
     // return $newArrests;
-    return $this->get_arrests();
+    return $this->get_arrests($request);
     }
 
     // public function police_station()
@@ -58,12 +58,24 @@ class ArrestsController extends Controller
     // }
 
     
-    public function get_arrests ( ){
+    public function get_arrests (Request $request){
+        $searchTerm = $request->search_term;
+            
+           
+        if($searchTerm != ""){
+            $arrests = Arrests::where('name',"LIKE", "%$searchTerm%")
+            ->orWhere('citizens_id',"LIKE", "%$searchTerm%")
+            ->orWhere('arrest_details',"LIKE", "%$searchTerm%")
+            ->orWhere('category',"LIKE", "%$searchTerm%")
+            ->orWhere('date_of_incident',"LIKE", "%$searchTerm%")
+            ->get();            
+    }    else {
+            $arrests = Arrests::with('police_station')->get();  
+        }
     
     
-        $arrests = Arrests::with('police_station', )->get();
         
-        return view ('arrestslist', compact('arrests' ));
+        return view ('arrestslist', compact('arrests','searchTerm' ));
         
         // return $arrests;
     }

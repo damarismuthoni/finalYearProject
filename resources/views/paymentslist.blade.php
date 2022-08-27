@@ -23,7 +23,9 @@
         body{
         background-color: #B83818;
         }
-
+        .search{
+            width: 25%;
+        }
         .wrapper{
         display: flex;
         position: relative;
@@ -124,10 +126,13 @@
         }
         }
 
-        
-hr {
-  width: 16%;
-  margin: 10px auto;}
+        #not_found_img {
+        width: 40%;
+        margin-top: 65px;
+    }
+        hr {
+        width: 16%;
+        margin: 10px auto;}
 
     </style>
 
@@ -149,9 +154,17 @@ hr {
     <div class="info">
     <div style="text-align:center">
         <a href="/payments/new" type="button" class="btn btn-primary"><b>+</b> PAYMENT</a>
-        {{-- <div class="btn">
-            <a href="/abstracts/new" button id="submit" type="submit">Submit</button> </div>
-           --}}
+        
+        <form method="get" action="/paymentslist">
+            <label for="basic-url" class="form-label"></label>
+            
+            <div class="input-group mb-3 search">
+                <input type="text " placeholder="search " class="form-control" name="search_term"  value="{{$searchTerm ? $searchTerm : ""}}"
+                id="basic-url" >
+                <button class="btn btn-secondary" type="submit" id="button-addon2">SEARCH</button>
+            </div>
+        </form>
+        
         <table  class="table table-striped table-hover">
             <thead>
               <tr>
@@ -175,6 +188,11 @@ hr {
               
             </tbody>
           </table>
+
+          @if($payment->count() == 0)
+          <img id="not_found_img" src="/images/not_found.jpg" />
+        @endif
+
           <div> </div>
       </div>
     </div>

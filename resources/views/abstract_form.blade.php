@@ -176,14 +176,17 @@ input {
 }
 
 .btn {
-  width: 100%;
+  width:10%;
   text-align: center;
-  margin: 20px;
+  background: #080D38;
+  margin-left: 80%;
+  margin-top: 10px;
+  /* margin: 20px; */
 
 }
 
 button {
-  background: #080D38;
+ 
   border-radius: 4px;
   color: white;
   font-size: 1em;

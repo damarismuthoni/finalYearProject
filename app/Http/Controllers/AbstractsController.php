@@ -11,8 +11,8 @@ use Illuminate\Support\Facades\DB;
 class AbstractsController extends Controller
 {
     //
-    public function getAbstracts(){
-
+    public function getAbstracts(Request $request){
+        
         // Using an ORM
         $abstracts = Abstracts::all();  
         return $abstracts;
@@ -49,14 +49,26 @@ public function saveAbstracts (Request $request)
 
     $newAbstracts->save();
 
-    return $this->get_abstracts();
+    return $this->get_abstracts($request);
 }
-public function get_abstracts ( ){
+
+
+
+public function get_abstracts (Request $request){
+    $searchTerm = $request->search_term;
+        
+       
+    if($searchTerm != ""){
+        $abstracts = Abstracts::with('police_station', 'police')->where('name_of_complainant', 'LIKE', "%$searchTerm%")->get();  
+    } else {
+        $abstracts = Abstracts::with('police_station', 'police')->get();  
+    }
+
     
     // select * from abstracts;
-    $abstracts = Abstracts::with('police_station', 'police')->get();
+    // $abstracts = Abstracts::with('police_station', 'police')->get();
 
-    return view ('abstractlist', compact('abstracts'));
+    return view ('abstractlist', compact('abstracts', 'searchTerm'));
 
 }
 public function new_abstract(){

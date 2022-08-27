@@ -24,6 +24,10 @@
         background-color: #B83818;
         }
 
+        .search{
+            width: 20%;
+        }
+
         .wrapper{
         display: flex;
         position: relative;
@@ -119,6 +123,10 @@
         padding-right:10px ;
         }
         
+        #not_found_img {
+        width: 40%;
+        margin-top: 65px;
+    }
 hr {
   width: 16%;
   margin: 10px auto;}
@@ -143,9 +151,17 @@ hr {
     <div class="info">
     <div style="text-align:center">
         <a href="/arrests/new" type="button" class="btn btn-primary"><b>+</b> ARREST</a>
-        {{-- <div class="btn">
-            <a href="/abstracts/new" button id="submit" type="submit">Submit</button> </div>
-           --}}
+        
+        <form method="get" action="/arrestslist">
+            <label for="basic-url" class="form-label"></label>
+            
+            <div class="input-group mb-3 search">
+                <input type="text " placeholder="search " class="form-control" name="search_term"  name="search_term"  value="{{$searchTerm ? $searchTerm : ""}}"
+                 id="basic-url" >
+                <button class="btn btn-secondary" type="submit" id="button-addon2">SEARCH</button>
+            </div>
+        </form>
+
         <table  class="table table-striped" c>
             <thead>
               <tr>
@@ -174,6 +190,11 @@ hr {
               
             </tbody>
           </table>
+
+          @if($arrests->count() == 0)
+          <img id="not_found_img" src="/images/not_found.jpg" />
+        @endif
+
           <div> </div>
       </div>
     </div>

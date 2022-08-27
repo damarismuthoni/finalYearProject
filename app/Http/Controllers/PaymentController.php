@@ -44,17 +44,33 @@ class PaymentController extends Controller
         'receipt_number' => $request->receipt_number
     ]);
 
-    return $this->get_payments();
+    return $this->get_payments($request);
     // return redirect()->action([AbstractsController::class, 'get_abstracts']);
 
 
     }
-    public function get_payments ( ){
-    
-        $payment = Payment::orderBy('id', 'DESC')->get();
+    public function get_payments (Request $request){
+      
+        if($request == null) {
+            $searchTerm = "";
+        } else {
+            $searchTerm = $request->search_term;
+        }
 
+        if($searchTerm != ""){
+            $payment = Payment::where('name',"LIKE", "%$searchTerm%")
+                ->orWhere('id_number',"LIKE", "%$searchTerm%")
+                ->orWhere('amount_paid',"LIKE", "%$searchTerm%")
+                ->orWhere('for',"LIKE", "%$searchTerm%")
+                ->orWhere('receipt_number',"LIKE", "%$searchTerm%")
+                ->get();            
+        }
+        else{ 
+            $payment = Payment::get();  
+        }
+        
     
-        return view ('paymentslist', compact('payment'));
+        return view ('paymentslist', compact('payment', 'searchTerm'));
     
     }
 

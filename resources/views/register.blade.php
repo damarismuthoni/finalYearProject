@@ -62,7 +62,7 @@
 
         <div class="form-group">
         <div class="form-group was validated"></div>
-            <input type="text"  class="form-control" name="police_name" value="Susan Mwende" placeholder="Name">
+            <input type="text"  class="form-control" name="police_name" value="" placeholder="Name">
                 <div class="invalid-feedback">
                  please enter your Name
                 </div>
@@ -70,7 +70,7 @@
 
          <div class="form-group"> 
          <div class="form-group was validated"></div>  
-           <input type="text" class="form-control" name="reg_no" value="ofc/4828/3948"placeholder="Registration Number">
+           <input type="text" class="form-control" name="reg_no" value=""placeholder="Registration Number">
               <div class="invalid-feedback">
               please enter your Registration Number
               </div>
@@ -78,7 +78,7 @@
 
          <div class="form-group">   
          <div class="form-group was validated"></div>
-          <input type="text" class="form-control" name="police_station_id" value="8402" placeholder="Police Station ID">
+          <input type="text" class="form-control" name="police_station_id" value="" placeholder="Police Station ID">
               <div class="invalid-feedback">
               please enter your Police Station Id
               </div>
@@ -86,7 +86,7 @@
 
          <div class="form-group"> 
          <div class="form-group was validated"></div>  
-           <input type="text" class="form-control" name="phone_no" value="0724930492" placeholder="Phone Number">
+           <input type="text" class="form-control" name="phone_no" value="" placeholder="Phone Number">
              <div class="invalid-feedback">
                 please enter your Phone No
              </div>
@@ -94,7 +94,7 @@
 
          <div class="form-group">  
          <div class="form-group was validated"></div>   
-           <input type="password" class="form-control" name="password" value="susan123" placeholder="Password">
+           <input type="password" class="form-control" name="password" value="" placeholder="Password">
             <div class="invalid-feedback">
               please enter your Password
             </div>

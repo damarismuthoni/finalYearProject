@@ -23,6 +23,9 @@
         body{
         background-color: #B83818;
         }
+        .search{
+            width: 25%;
+        }
 
         .wrapper{
         display: flex;
@@ -120,12 +123,17 @@
         }
 
         
-hr {
-  width: 16%;
-  margin: 10px auto;}
+        hr {
+            width: 16%;
+            margin: 10px auto;}
 
-    tr {
-        cursor: pointer;
+        tr {
+            cursor: pointer;
+        }
+
+    #not_found_img {
+        width: 40%;
+        margin-top: 65px;
     }
 
     </style>
@@ -148,9 +156,16 @@ hr {
     <div class="info">
     <div style="text-align:center">
         <a href="/abstracts/new" type="button" class="btn btn-primary"><b>+ </b> ABSTRACT</a>
-        {{-- <div class="btn">
-            <a href="/abstracts/new" button id="submit" type="submit">Submit</button> </div>
-           --}}
+        
+        <form method="get" action="/abstractlist">
+            <label for="basic-url" class="form-label"></label>
+            
+            <div class="input-group mb-3 search">
+                <input type="text " placeholder="search name" class="form-control" name="search_term" id="basic-url" value="{{$searchTerm ? $searchTerm : ""}}" aria-describedby="basic-addon3">
+                <button class="btn btn-secondary" type="submit" id="button-addon2">SEARCH</button>
+            </div>
+        </form>
+
         <table  class="table table-striped">
             <thead>
               <tr>
@@ -164,27 +179,30 @@ hr {
               </tr>
             </thead>
             <tbody>
-                @foreach ($abstracts as $abstract)
+                    @foreach ($abstracts as $abstract)
+                        
+                        <tr onclick="window.location.href='{{route('edit_abstract', $abstract->id)}}'">
+                                <td>{{$abstract->police_station->police_station_name}}</td>
+                                <td>{{$abstract->name_of_complainant}}</td>
+                                <td>
+                                    <span class="d-inline-block text-truncate" style="max-width: 250px;">
+                                        {{$abstract->details}}
+                                    </span> 
+                                </td>
+                                <td>{{$abstract->telephone_number}}</td>
+                                <td>{{$abstract->police->police_name}}</td>
+                                <td>{{$abstract->status}}</td>
+                                <td>{{$abstract->date_of_incident}}</td> 
+                        </tr>
                     
-                    <tr onclick="window.location.href='{{route('edit_abstract', $abstract->id)}}'">
-                            <td>{{$abstract->police_station->police_station_name}}</td>
-                            <td>{{$abstract->name_of_complainant}}</td>
-                            <td>
-                                <span class="d-inline-block text-truncate" style="max-width: 250px;">
-                                    {{$abstract->details}}
-                                </span> 
-                            </td>
-                            <td>{{$abstract->telephone_number}}</td>
-                            <td>{{$abstract->police->police_name}}</td>
-                            <td>{{$abstract->status}}</td>
-                            <td>{{$abstract->date_of_incident}}</td> 
-                    </tr>
-                
-                @endforeach
-               
+                    @endforeach               
               
             </tbody>
           </table>
+
+          @if($abstracts->count() == 0)
+            <img id="not_found_img" src="/images/not_found.jpg" />
+          @endif
           
       </div>
     </div>

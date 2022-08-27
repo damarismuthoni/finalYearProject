@@ -41,7 +41,7 @@ class PoliceUserController extends Controller
             'police_name' => ['required'],
             'reg_no' => ['required', 'unique:police_users'],
             'police_station_id' => ['required'],
-            'phone_no' => ['required', 'unique:police_users'],
+            'phone_no' => ['required', 'unique:police_users','max:10','min:10'],
             'password' => ['required']
         ]);
 

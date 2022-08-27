@@ -106,8 +106,9 @@
 
 </div>
 
-
-
+<script>
+    document.body.style.zoom = "80%";
+</script>
 
 </body>
 </html>
